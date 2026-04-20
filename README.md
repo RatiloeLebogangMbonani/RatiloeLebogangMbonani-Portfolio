@@ -79,17 +79,17 @@ Passionate about building innovative solutions, gaining practical experience, an
 
 ## 📄 Reflection on Coding My CV in Markdown
 
-My objective was to learn Markdown syntax and apply it to build a professional CV that could be easily updated and shared online. I learned how to use Markdown features such as headings, bullet points,icons, comments and links to organize my CV clearly. I found it easy to learn how to code in Markdown and applied these features to create a well-structured document. I successfully created a clean and professional CV that is easy to update and share and this experience helped me understand how GitHub and Markdown work together.
+My objective was to learn Markdown syntax and apply it to write a professional CV that could be easily updated and shared online. I learned how to use Markdown features such as headings, bullet points,icons, comments and links to organize my CV clearly. I found it easy to learn how to code in Markdown and applied these features to create a well structured document. I successfully created a clean and professional CV that is easy to update and share and this experience helped me understand how GitHub and Markdown work together.
 
 ---
 
 ## 🎥 Reflection on Mock Interview Experience
 
-I recorded a mock interview to simulate a real-world job interview environment. I needed to present myself professionally, communicate my skills clearly, and respond confidently to technical and behavioral questions. I prepared by selecting one question from each category; behavioral, situational, technical, and general and challenged myself to answer each using the STAR method. I recorded myself six times, reviewed each attempt, and improved, body language with each recording until I achieved a recording where I felt confident. Through this process, I became more aware of my communication style, body language, and areas where I need improvement. This experience helped me prepare more effectively for real interviews.
+I recorded a mock interview to simulate a real-world job interview environment. I needed to present myself professionally, communicate my skills clearly, and respond confidently to technical and behavioral questions. I prepared by selecting one question from each category; behavioral, situational, technical, and general and answer each question using the STAR method. I recorded myself multiple times, reviewed each attempt, and improved my responses and body language with each recording until I achieved a recording where I felt confident. Through this process, I became more aware of my communication style, body language, and confidence levels. This experience helped me prepare more effectively for real interviews.
 
 ---
 
 ## 🌐 Reflection on Using GitHub Pages
 
-I wanted to showcase my CV online in a professional and accessible way. My task was to deploy my CV using GitHub Pages and ensure it displayed correctly as a web page. The challenge I faced while trying to set it up was embedding my mock interview video directly below my CV without redirecting viewer to another site via a link. To solve my challenge, I used HTML code inside my CV README Markdown file and added the video to my repository files and in that way, the video displayed directly below my CV. As a result, I successfully deployed my CV online with the embedded mock interview video. This experience improved my understanding of deployment and presenting content on the web.
+I wanted to showcase my CV online in a professional and accessible way. My task was to deploy my CV using GitHub Pages and ensure it displayed correctly as a web page. The challenge I faced while trying to set it up was embedding my mock interview video directly below my CV without redirecting viewer to another site via a link. To solve my challenge, I used HTML code inside my CV README Markdown file and uploaded the video to my repository files and in that way, the video displayed directly below my CV. As a result, I successfully deployed my CV online with the embedded mock interview video. This experience improved my understanding of deployment and presenting content on the web.
 
