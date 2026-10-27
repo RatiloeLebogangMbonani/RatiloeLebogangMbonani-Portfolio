@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ratiloe Lebogang Mbonani | ICT Portfolio</title>
+<meta name="description" content="Portfolio of Ratiloe Lebogang Mbonani, final-year ICT (Multimedia) student at CPUT, Cape Town.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS =====
+   PROVISIONAL: the Netlify site could not be read automatically.
+   Replace these five hex values (and the two fonts) with the exact ones from your Netlify CSS. */
+:root{
+  --navy:#1F2A44;   /* text, header */
+  --mauve:#8E6C88;  /* borders, secondary */
+  --pink:#E8A2B8;   /* highlights, focus */
+  --prune:#5B2A4A;  /* headings, buttons */
+  --blush:#FFF9EE;  /* page background: cream white */
+  --white:#fff;
+  --pinkl:#FCE4EC;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --head:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--head)}
+body{margin:0;font:400 1rem/1.65 var(--sans);color:var(--navy);background:var(--blush)}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--prune);line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2.2rem,6vw,3.8rem)}h2{font-size:clamp(1.7rem,4vw,2.4rem)}h3{font-size:1.25rem}h4{font-size:1.05rem}
+p{margin:0 0 1em;max-width:70ch}a{color:var(--prune)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.wrap{width:min(1100px,92%);margin:auto}
+section{padding:5rem 0 3rem;border-top:1px solid var(--pink)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--white);padding:.5rem;z-index:99}
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--blush);border-bottom:1px solid var(--pink);height:var(--head)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
+.brand{font:700 1.1rem var(--serif);color:var(--prune);text-decoration:none}
+nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:.5rem .8rem;color:var(--navy);text-decoration:none;font-size:.9rem;border-radius:6px}
+nav a:hover{background:var(--pinkl)}
+nav a.active{background:var(--pink);color:var(--navy);font-weight:600}
+#menu{display:none;background:none;border:1px solid var(--pink);color:var(--navy);padding:.4rem .8rem;border-radius:6px;font:inherit;cursor:pointer}
+#bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--pink)}
+@media(max-width:860px){
+  #menu{display:block}
+  nav{position:absolute;top:var(--head);left:0;right:0;background:var(--blush);border-bottom:1px solid var(--pink);display:none;padding:.5rem 4%}
+  nav.open{display:block}nav ul{flex-direction:column}
+}
+/* hero */
+#home{border-top:0;padding-top:4rem}
+.hero{display:grid;gap:2.5rem;grid-template-columns:1fr 240px;align-items:center}
+.mono{width:220px;height:220px;border-radius:50%;background:var(--pink);color:var(--prune);display:grid;place-items:center;font:700 4rem var(--serif);border:6px solid var(--white)}
+.lead{font-size:1.15rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.5rem 0}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:999px;background:var(--pink);color:var(--navy);text-decoration:none;font-weight:600;border:2px solid var(--pink)}
+.btn.alt{background:transparent;color:var(--prune);border-color:var(--pink)}
+.btn:hover{background:var(--navy);border-color:var(--navy);color:var(--blush)}
+.facts{list-style:none;padding:0;margin:0;display:grid;gap:.3rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.mono{width:140px;height:140px;font-size:2.4rem}}
+/* blocks */
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--white);border:1px solid var(--pink);border-radius:12px;padding:1.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0 0 1rem}
+.chips li{background:var(--white);border:1px solid var(--pink);border-radius:999px;padding:.25rem .9rem;font-size:.9rem}
+.tl{list-style:none;padding:0;margin:0;border-left:3px solid var(--pink)}
+.tl li{padding:0 0 1.2rem 1.2rem}.tl b{color:var(--prune)}
+.sub{margin-top:2.5rem}
+.ph{margin:.8rem 0 0;min-height:170px;border:2px dashed var(--pink);border-radius:10px;background:var(--pinkl);display:grid;place-items:center;text-align:center;padding:1rem;font-size:.85rem;color:var(--prune)}
+.ph code{font-size:.8rem;word-break:break-all}
+.ph img{display:block;width:100%;height:auto;border-radius:8px}
+.ph:has(img){display:block;padding:0;border:0;background:none}
+.todo{border-left:4px solid var(--pink);background:var(--white);padding:.7rem 1rem;border-radius:0 8px 8px 0;font-size:.92rem}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;background:var(--white);font-size:.92rem}
+th,td{border:1px solid var(--pink);padding:.55rem .7rem;text-align:left;vertical-align:top}th{background:var(--pink);color:var(--navy)}
+td.e{color:#6b5a68;font-style:italic}
+details{background:var(--white);border:1px solid var(--pink);border-radius:10px;padding:.8rem 1rem;margin-bottom:.8rem}
+summary{cursor:pointer;font:700 1.05rem var(--serif);color:var(--prune)}
+blockquote{margin:0;padding-left:1rem;border-left:4px solid var(--pink)}
+video{width:100%;max-width:760px;border-radius:12px;background:var(--navy);display:block;margin:1rem 0}
+footer{background:var(--pinkl);color:var(--navy);border-top:3px solid var(--pink);padding:2rem 0;margin-top:3rem}
+footer a{color:var(--prune)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+.lst{margin:0 0 1rem;padding-left:1.2rem;max-width:70ch}.lst li{margin-bottom:.25rem}.tight{margin:.2rem 0 0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#home">Ratiloe Mbonani</a>
+    <button id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#evidence">Evidence</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+        <li><a href="#agile">Agile Industry Placement</a></li>
+        <li><a href="#overall">Overall</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="bar" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+<!-- 1. HOME -->
+<section id="home" aria-labelledby="h-home">
+  <div class="wrap hero">
+    <div>
+      <!-- TODO: replace this block with the About copy from your Netlify portfolio. Text below comes from your GitHub README. -->
+      <h1 id="h-home">Hi, I'm Ratiloe Lebogang Mbonani</h1>
+     <p>Dedicated ICT student at Cape Peninsula University of Technology (CPUT) with a strong background in full-stack development and digital design. Passionate about building innovative solutions, gaining practical experience, and leveraging technology to deliver meaningful impact.</p>
+      <div class="btns">
+        <a class="btn" href="#evidence">View my evidence</a>
+        <a class="btn alt" href="#profile">Read my profile</a>
+      </div>
+      <ul class="facts">
+        <li>Cape Town, Western Cape</li>
+        <li><a href="mailto:231006810@mycput.ac.za">231006810@mycput.ac.za</a> | <a href="tel:0812885205">081 288 5205</a></li>
+        <li><a href="https://www.linkedin.com/in/ratiloe-mbonani" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/RatiloeLebogangMbonani" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="mono" role="img" aria-label="Initials RM">RM</div>
+  </div>
+</section>
+
+<!-- 2. PROFILE -->
+<section id="profile" aria-labelledby="h-profile">
+  <div class="wrap reveal">
+  
+    
+
+    <div class="grid sub">
+      <div>
+        <h2>Technical skills</h2>
+        <h4>Programming languages</h4>
+        <ul class="chips"><li>JavaScript</li><li>CSS</li><li>Python</li><li>HTML</li><li>MySQL</li><li>PHP</li></ul>
+        <h4>Frameworks &amp; tools</h4>
+        <ul class="chips"><li>Node.js</li><li>React.js</li><li>Vue.js</li><li>Figma</li><li>Adobe Illustrator</li><li>Adobe InDesign</li></ul>
+      </div>
+      <div>
+        <h3>Education</h3>
+        <ul class="tl">
+          <li><b>Cape Peninsula University of Technology (CPUT)</b><br>Diploma in Information and Communication Technology (Multimedia)<br>2024 to present</li>
+          <li><b>Ekangala Comprehensive High School</b><br>National Senior Certificate<br>2024</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">References</h3>
+    <div class="grid">
+      <div class="card"><b>Meagan Hamman</b><br>Lecturer, Cape Peninsula University of Technology<br><a href="mailto:hammanm@cput.ac.za">hammanm@cput.ac.za</a><br><a href="tel:0214603754">021 460 3754</a></div>
+      <div class="card"><b>Aphiwe Hlophe</b><br>Lecturer, Cape Peninsula University of Technology<br><a href="mailto:hlophea@cput.ac.za">hlophea@cput.ac.za</a><br><a href="tel:0214604254">021 460 4254</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. EVIDENCE -->
+<section id="evidence" aria-labelledby="h-evidence">
+  <div class="wrap reveal">
+    <h2 id="h-evidence">Evidence</h2>
+    <p>My full evidence lives in my GitHub portfolio. Open it to see everything in one place.</p>
+    <div class="grid sub">
+      <article class="card"><h3>GitHub portfolio (README)</h3><p>Profile, technical skills, education, projects, volunteering, hackathons, references, mock interview video and reflections.</p><a class="btn" href="https://github.com/RatiloeLebogangMbonani/RatiloeLebogangMbonani-Portfolio#readme" target="_blank" rel="noopener">Open repository</a></article>
+      <article class="card"><h3>GitHub Pages portfolio</h3><p>The published version of my portfolio.</p><a class="btn" href="https://ratiloelebogangmbonani.github.io/RatiloeLebogangMbonani-Portfolio/" target="_blank" rel="noopener">Open portfolio</a></article>
+      <article class="card"><h3>GitHub profile</h3><p>All my repositories and activity.</p><a class="btn" href="https://github.com/RatiloeLebogangMbonani" target="_blank" rel="noopener">Open profile</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. REFLECTION -->
+<section id="reflection" aria-labelledby="h-reflection">
+  <div class="wrap reveal">
+    <h2 id="h-reflection">Reflection</h2>
+    <p>My three reflections from building and publishing my CV, grouped by what I learned. My five Agile reflections are in <a href="#agile">Agile Industry Placement</a>.</p>
+
+    <h3 class="sub">Documentation: coding my CV in Markdown</h3>
+    <blockquote><p>My objective was to learn Markdown syntax and apply it to write a professional CV that could be easily updated and shared online. I learned how to use Markdown features such as headings, bullet points, icons, comments and links to organize my CV clearly. I found it easy to learn how to code in Markdown and applied these features to create a well structured document. I successfully created a clean and professional CV that is easy to update and share and this experience helped me understand how GitHub and Markdown work together.</p></blockquote>
+
+    <h3 class="sub">Communication: mock interview experience</h3>
+    <blockquote><p>I recorded a mock interview to simulate a real-world job interview environment. I needed to present myself professionally, communicate my skills clearly, and confidently respond to a mix of technical, behavioural, situational, and general questions. I prepared by selecting one question from each category and answering each question using the STAR method. I recorded myself six times before getting the right shot, and with each attempt, I improved my responses and body language. Through this process, I became more aware of my communication style, body language, and confidence levels. This experience helped me prepare more effectively for real interviews.</p></blockquote>
+
+    <h3 class="sub">Deployment: using GitHub Pages</h3>
+    <blockquote><p>I wanted to showcase my CV online in a professional and accessible way using GitHub Pages. My task was to deploy my CV and ensure it displayed correctly as a web page. The challenge I faced while trying to set it up was embedding my mock interview video directly below my CV without redirecting viewer to another site. To solve this challenge, I used HTML code inside my CV README Markdown file and uploaded the video to my repository files. In that way, the video displayed directly below my CV. As a result, I successfully deployed my CV online with the embedded mock interview video. This experience improved my understanding of deployment and presenting content on the web.</p></blockquote>
+  </div>
+</section>
+
+<!-- 5. AGILE INDUSTRY PLACEMENT -->
+<section id="agile" aria-labelledby="h-agile">
+  <div class="wrap reveal">
+    <h2 id="h-agile">Agile Industry Placement</h2>
+    <h3 class="sub">VarsityPath: Agile Project Documentation</h3>
+    <p><b>4 August 2026 – 4 September 2026.</b> VarsityPath is an AI-supported university-readiness platform for Grade 11–12 learners. It brings academic results, learning improvement, study planning, university programme exploration and application tracking into one learner-centred workflow.</p>
+    <p>Agile approach: Kanban with sprint-based planning. Project management: Trello. Communication: Microsoft Teams for meetings and formal collaboration, WhatsApp for quick day-to-day updates.</p>
+    <figure class="ph" data-src="images/agile-varsitypath.png" data-label="VarsityPath: main screen"></figure>
+    <h3 class="sub">Project team</h3>
+    <div class="tw"><table><caption class="skip">Project team</caption><thead><tr><th scope="col">Team member</th><th scope="col">Role</th><th scope="col">Primary responsibilities</th></tr></thead><tbody><tr><td>Bambanani Liwana</td><td>Agile Lead and group leader</td><td>Agile coordination, sprint planning, design and team coordination</td></tr><tr><td>Mafuta Siyamthanda</td><td>Product Owner / Backend Developer</td><td>Product priorities, requirements, backend/data functionality and product decisions</td></tr><tr><td>Nelisiwe Makhabane</td><td>Frontend Developer</td><td>Frontend implementation, interface development, visual design and usability</td></tr><tr><td>Ratiloe Mbonani</td><td>Frontend Developer</td><td>Frontend implementation, interface development, visual design and usability</td></tr></tbody></table></div>
+    <h3 class="sub">1. Agile Team Charter</h3>
+    <div class="grid">
+      <div><h4>Purpose and vision</h4><p>An AI-supported university-readiness platform that brings results, study planning, programme exploration and application tracking into one workflow.</p>
+      <h4>Mission</h4><p>To collaboratively design and develop a functional, user-centred platform that helps learners understand their academic position and move towards meaningful tertiary education choices.</p>
+      <h4>Ways of working</h4><p>A Kanban-style workflow within four planned sprints: Product Backlog → Sprint → In Progress → Review/Testing → Done. Work is discussed through regular stand-ups and team check-ins.</p>
+      <h4>Decision-making</h4><p>The team discusses important product, design and technical decisions collaboratively. The Product Owner coordinates product priorities, and design and technical decisions receive input from the relevant team members.</p></div>
+      <div><h4>Definition of success</h4><ul class="lst"><li>Core learner journey can be demonstrated.</li><li>Learners can manage academic results.</li><li>Learners can identify areas for improvement.</li><li>Learners can create study goals and tasks.</li><li>Learners can explore supported university programmes.</li><li>Learners can track application preparation.</li><li>The interface is clear, usable and presentable.</li><li>The final product is ready for presentation on 4 September 2026.</li></ul><h4>Core values</h4><p>Collaboration, respect, accountability, transparency, creativity, problem-solving, continuous learning, adaptability and user-centred thinking.</p></div>
+    </div>
+    <h4>Agile ceremonies</h4>
+    <div class="tw"><table><caption class="skip">Agile ceremonies</caption><thead><tr><th scope="col">Ceremony</th><th scope="col">Frequency</th><th scope="col">Purpose</th></tr></thead><tbody><tr><td>Daily Stand-up</td><td>Daily</td><td>Discuss completed work, planned work and blockers.</td></tr><tr><td>Sprint Planning</td><td>Start of sprint</td><td>Select and prioritise work for the sprint goal.</td></tr><tr><td>Sprint Review</td><td>End of sprint</td><td>Demonstrate completed work and gather feedback.</td></tr><tr><td>Sprint Retrospective</td><td>End of sprint</td><td>Discuss what went well, what did not and what to improve.</td></tr></tbody></table></div>
+    <div class="grid sub">
+      <div><h4>Working agreements</h4><ul class="lst"><li>Communicate regularly.</li><li>Respect team members and their responsibilities.</li><li>Complete assigned work within the agreed sprint where possible.</li><li>Raise blockers early.</li><li>Give constructive feedback.</li><li>Update Trello as work progresses.</li><li>Test work before considering it Done.</li><li>Ask for help when blocked.</li><li>Support one another when priorities change.</li></ul></div>
+      <div><h4>Definition of Done</h4><ul class="lst"><li>Required functionality is implemented.</li><li>The feature works as intended.</li><li>The interface has been reviewed.</li><li>The feature has been tested.</li><li>Known critical issues are addressed.</li><li>The work does not negatively affect existing functionality.</li><li>The team can demonstrate the completed work.</li></ul></div>
+      <div><h4>Risks and constraints</h4><ul class="lst"><li>Limited project time.</li><li>Technical and integration problems.</li><li>AI extraction may require human review.</li><li>University admission requirements can change.</li><li>Testing may identify issues close to the presentation.</li><li>Team members have other academic responsibilities.</li></ul></div>
+    </div>
+    <h3 class="sub">2. User stories and tasks</h3>
+    <div class="tw"><table><caption class="skip">User stories and tasks</caption><thead><tr><th scope="col">ID</th><th scope="col">Feature</th><th scope="col">User story</th><th scope="col">Tasks</th></tr></thead><tbody><tr><td>US01</td><td>Account registration</td><td>As a Grade 11 or Grade 12 learner, I want to create an account so that I can securely access my VarsityPath information.</td><td>Registration form; validation; authentication; account testing.</td></tr><tr><td>US02</td><td>Sign in</td><td>As a learner, I want to sign in so that I can access my personal academic information.</td><td>Login screen; validation; error handling; sign-out testing.</td></tr><tr><td>US03</td><td>Manage results</td><td>As a learner, I want to enter and manage my school results so that I can understand my academic performance.</td><td>Results form; mark validation; save; display; edit; delete; test.</td></tr><tr><td>US04</td><td>Upload results</td><td>As a learner, I want to upload my results document so that I can reduce manual data entry.</td><td>Upload interface; supported formats; AI extraction; review/edit; confirmation; testing.</td></tr><tr><td>US05</td><td>Improve</td><td>As a learner, I want to see my strengths and weaker areas so that I know where to focus my studies.</td><td>Performance calculations; strengths; weaker subjects; knowledge gaps; clear explanations.</td></tr><tr><td>US06</td><td>Study goals</td><td>As a learner, I want to create study goals so that I can work towards improving my performance.</td><td>Goal form; target mark; current mark; due date; save/edit/delete.</td></tr><tr><td>US07</td><td>Study tasks</td><td>As a learner, I want to manage study tasks so that I can organise my studying.</td><td>Task form; subject; priority; duration; due date; complete; reschedule.</td></tr><tr><td>US08</td><td>University Explorer</td><td>As a learner, I want to explore university programmes so that I can discover realistic tertiary options.</td><td>University section; supported institutions; programmes; requirements; sources.</td></tr><tr><td>US09</td><td>Eligibility</td><td>As a learner, I want to check programme requirements so that I can identify realistic university options.</td><td>Eligibility rules; subjects; marks; scoring; satisfied/unmet requirements; testing.</td></tr><tr><td>US10</td><td>Application Tracker</td><td>As a learner, I want to track university applications so that I can keep my application progress organised.</td><td>Institution; programme; year; status; notes; deadlines; updates; duplicate prevention.</td></tr><tr><td>US11</td><td>Assistant</td><td>As a learner, I want to ask the VarsityPath Assistant questions so that I can better understand my information and navigate the platform.</td><td>Assistant UI; AI connection; user-data access; errors; anti-fabrication testing.</td></tr></tbody></table></div>
+    <h3 class="sub">3. Product backlog</h3>
+    <div class="tw"><table><caption class="skip">Product backlog</caption><thead><tr><th scope="col">Priority</th><th scope="col">ID</th><th scope="col">Backlog item</th><th scope="col">Sprint</th></tr></thead><tbody><tr><td>High</td><td>US01</td><td>Account registration</td><td>Sprint 1/2</td></tr><tr><td>High</td><td>US02</td><td>Sign in</td><td>Sprint 2</td></tr><tr><td>High</td><td>US03</td><td>Academic results</td><td>Sprint 2</td></tr><tr><td>High</td><td>US05</td><td>Improve module</td><td>Sprint 2</td></tr><tr><td>High</td><td>US08</td><td>University Explorer</td><td>Sprint 3</td></tr><tr><td>High</td><td>US09</td><td>Eligibility</td><td>Sprint 3</td></tr><tr><td>High</td><td>US10</td><td>Application Tracker</td><td>Sprint 3</td></tr><tr><td>Medium</td><td>US06</td><td>Study Goals</td><td>Sprint 2/3</td></tr><tr><td>Medium</td><td>US07</td><td>Study Planner</td><td>Sprint 3</td></tr><tr><td>Medium</td><td>US04</td><td>AI Results Extraction</td><td>Sprint 3</td></tr><tr><td>Medium</td><td>US11</td><td>AI Assistant</td><td>Sprint 3</td></tr><tr><td>Low</td><td>-</td><td>Final polish and additional improvements</td><td>Sprint 4</td></tr><tr><td>High</td><td>-</td><td>Testing and bug fixing</td><td>Sprint 4</td></tr><tr><td>High</td><td>-</td><td>Presentation preparation</td><td>Sprint 4</td></tr></tbody></table></div>
+    <h3 class="sub">4. Sprint backlog</h3>
+    <div class="grid"><article class="card"><h4>Sprint 1: Foundation</h4><p class="tight"><b>4–10 August 2026</b></p><p><b>Goal:</b> Establish the project foundation, user journey, requirements and interface direction.</p><ul class="lst"><li>Project kickoff</li><li>Define target users and problem</li><li>User journey</li><li>User stories</li><li>Product backlog</li><li>Trello setup</li><li>Agile Team Charter</li><li>Wireframes</li><li>Visual direction</li><li>Technical planning</li><li>Sprint review</li><li>Sprint retrospective</li></ul></article><article class="card"><h4>Sprint 2: Academic Management</h4><p class="tight"><b>11–18 August 2026</b></p><p><b>Goal:</b> Build the core academic management experience.</p><ul class="lst"><li>Registration</li><li>Login</li><li>Dashboard</li><li>Manual results</li><li>Results validation</li><li>Results storage</li><li>Improve module</li><li>Strengths and weaknesses</li><li>Study goals</li><li>Initial testing</li><li>Sprint review</li><li>Sprint retrospective</li></ul></article><article class="card"><h4>Sprint 3: University &amp; Applications</h4><p class="tight"><b>19–27 August 2026</b></p><p><b>Goal:</b> Connect academic information to university exploration and application preparation.</p><ul class="lst"><li>University Explorer</li><li>UCT programmes</li><li>Stellenbosch University programmes</li><li>UWC programmes</li><li>CPUT programmes</li><li>Programme requirements</li><li>Eligibility</li><li>Application Tracker</li><li>Study Planner</li><li>AI-related functionality</li><li>Integration testing</li><li>Sprint review</li><li>Sprint retrospective</li></ul></article><article class="card"><h4>Sprint 4: Testing &amp; Presentation</h4><p class="tight"><b>28 August – 4 September 2026</b></p><p><b>Goal:</b> Complete, test, polish and prepare the final presentation.</p><ul class="lst"><li>Authentication testing</li><li>Results testing</li><li>Improve testing</li><li>Study Planner testing</li><li>University Explorer testing</li><li>Eligibility testing</li><li>Application Tracker testing</li><li>AI testing</li><li>Bug fixing</li><li>Responsive/UI improvements</li><li>Deployment</li><li>Presentation preparation</li><li>Final review</li><li>Presentation: 4 September</li></ul></article></div>
+    <h4>Trello board: VarsityPath, Agile Project 2026</h4>
+    <ul class="lst"><li>Product Backlog</li><li>Sprint 1: Foundation</li><li>Sprint 2: Academic Management</li><li>Sprint 3: University &amp; Applications</li><li>Sprint 4: Testing &amp; Presentation</li><li>In Progress</li><li>Review / Testing</li><li>Done</li></ul><figure class="ph" data-src="images/agile-trello-board.png" data-label="Trello board screenshot"></figure>
+    <h3 class="sub">5. Agile logbook</h3>
+    <p class="todo">Add your logbook entries here. They were not in the Word document.</p>
+    <div class="tw"><table><caption class="skip">Agile logbook</caption><thead><tr><th scope="col">Date</th><th scope="col">Activity</th><th scope="col">Progress, challenges and decisions</th></tr></thead><tbody><tr><td>Add</td><td>Add</td><td>Add</td></tr><tr><td>Add</td><td>Add</td><td>Add</td></tr></tbody></table></div><figure class="ph" data-src="images/agile-logbook.png" data-label="Agile logbook pages"></figure>
+    <h3 class="sub">Agile reflections</h3>
+    <details open><summary>1. Agile Team Charter</summary><p>Creating the Agile Team Charter helped me understand the importance of establishing clear roles, responsibilities, goals, and communication methods before starting a group project. Since VarsityPath involved developing an AI-supported university-readiness platform, it was important for every team member to understand the purpose of the project and how their contribution would support the final product. We identified WhatsApp as a way to share quick updates and Microsoft Teams for formal meetings and collaboration. This helped us establish a communication structure and understand the importance of teamwork. I learned that a successful Agile team needs cooperation, accountability, and a shared understanding of the project goals. One challenge in group work is ensuring that everyone remains informed and completes their responsibilities on time. Overall, the Team Charter provided a foundation for our collaboration and helped us understand that the success of the project depends not only on technical skills but also on communication and commitment.</p></details>
+    <details><summary>2. User Stories and Tasks</summary><p>Developing user stories helped me understand how to approach software development from the user's perspective rather than focusing only on the technical features. For VarsityPath, we considered the needs of Grade 11 and Grade 12 learners who require support with academic performance, study planning, university exploration, eligibility checks, and application tracking. Breaking these needs into user stories made the platform's purpose clearer and helped us identify the tasks required to deliver each feature. I learned that user stories should explain who the user is, what they want to achieve, and why the feature is valuable. Turning the stories into smaller tasks also made the work easier to organise and assign to team members. A challenge was ensuring that the stories were specific enough to guide development while still focusing on the learner's needs. This process showed me that understanding the target users is essential when designing useful and accessible digital solutions.</p></details>
+    <details><summary>3. Product Backlog</summary><p>Creating the Product Backlog taught me how to organise project requirements into a prioritised list of features and improvements. For VarsityPath, the backlog included features such as academic results management, study planning, university exploration, application tracking, and AI-supported assistance. I learned that not every feature can be developed at the same time, especially when working within a fixed deadline. Prioritising tasks according to user value, importance, and project requirements helps the team focus on the features that contribute most to the product's purpose. The backlog also gave the team a shared reference point for understanding what needed to be completed. One challenge was balancing the number of features we wanted to include with the time available for development and testing. This experience helped me understand that a Product Backlog is not simply a list of ideas; it is a tool for planning, decision-making, and managing changing requirements throughout an Agile project.</p></details>
+    <details><summary>4. Sprint Backlog</summary><p>Working with Sprint Backlogs helped me understand how a large project can be divided into smaller, manageable stages. For VarsityPath, our planned sprints covered the project foundation, academic management, university exploration and applications, and finally testing and presentation. This structure helped us organise the work according to the time available between 4 August and 4 September 2026. I learned that each sprint should have a clear goal and a realistic set of tasks that the team can work towards completing. Dividing the project into stages also made it easier to monitor progress and identify work that still required attention. A challenge was making sure that the tasks selected for each sprint were achievable within the allocated period, particularly when development, collaboration, and testing all needed time. Overall, Sprint Backlogs helped me appreciate the value of short-term planning, flexibility, and regular progress checks when developing a software product under a deadline.</p></details>
+    <details><summary>5. Agile Logbook</summary><p>The Agile Logbook helped me recognise the importance of recording project activities, progress, challenges, and decisions throughout the development process. It provides a record of what the team worked on, what was achieved, and which tasks still required attention. I learned that keeping an accurate logbook makes it easier to reflect on the team's progress and identify areas that need improvement. It also supports accountability because team members can review their responsibilities and understand how their contributions fit into the overall project. One lesson I took from this process is that project documentation should be maintained consistently rather than left until the end. If updates are missed, it becomes more difficult to remember decisions and accurately describe what happened during the project. Overall, the Agile Logbook reinforced the importance of reflection, organisation, and transparency in teamwork. It also showed me that documenting the development journey is valuable because it records not only the final outcome but also the learning that takes place along the way.</p></details>
+
+    <h3 class="sub">Industry learning</h3>
+    <p>My role was Frontend Developer: frontend implementation, interface development, visual design and usability. Working on VarsityPath, I learned to:</p>
+    <ul class="lst"><li>Work in a team using Kanban with sprint-based planning.</li><li>Track work on a Trello board as it moves from backlog to Done.</li><li>Use Daily Stand-ups, Sprint Planning, Sprint Reviews and Retrospectives.</li><li>Communicate through Microsoft Teams for meetings and WhatsApp for quick updates.</li><li>Turn learner needs into user stories, tasks and a prioritised backlog.</li></ul>
+  </div>
+</section>
+
+<!-- 6. OVERALL -->
+<section id="overall" aria-labelledby="h-overall">
+  <div class="wrap reveal">
+    <h2 id="h-overall">Overall</h2>
+    <p>Across my studies, projects, volunteering, hackathons, and placement, I have grown as a developer, designer, and communicator.</p>
+    <div class="grid sub">
+      <div class="card"><h4>Technical growth</h4><p>From school projects in Vue.js and Node.js to hackathon builds, I have applied JavaScript, PHP, MySQL, and React.js to real briefs.</p></div>
+      <div class="card"><h4>Design thinking</h4><p>My Multimedia diploma and tools such as Figma, Illustrator, and InDesign shape how I plan and present what I build.</p></div>
+      <div class="card"><h4>Professional communication</h4><p>Coding my CV in Markdown and recording a mock interview with the STAR method improved how I present myself.</p></div>
+      <div class="card"><h4>Collaboration and community</h4><p>Hackathons, AfriHack Connect, and the CPUT D6 Campus TikTok account taught me to work with others and represent my university.</p></div>
+      <div class="card"><h4>Deployment</h4><p>Publishing my CV with GitHub Pages and embedding video taught me how content reaches the web.</p></div>
+      <div class="card"><h4>Agile practice</h4><p>On VarsityPath I worked in a four-sprint Agile team and learned that success depends on communication and commitment as well as technical skill.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Ratiloe Lebogang Mbonani</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var menu=document.getElementById('menu'),nav=document.getElementById('nav'),bar=document.getElementById('bar');
+  menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+
+  /* scroll progress */
+  function prog(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100||0)+'%'}
+  addEventListener('scroll',prog,{passive:true});prog();
+
+  /* active nav link */
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  function setActive(){
+    var y=scrollY+120,cur=links[0];
+    links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&s.offsetTop<=y)cur=a});
+    links.forEach(function(a){a.classList.toggle('active',a===cur);a===cur?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current')});
+  }
+  addEventListener('scroll',setActive,{passive:true});setActive();
+
+  /* screenshot placeholders: drop the file into /images and it replaces the box */
+  [].forEach.call(document.querySelectorAll('.ph'),function(f){
+    var src=f.dataset.src,label=f.dataset.label;
+    f.innerHTML='<div><strong>Screenshot placeholder</strong><br>'+label+'<br><code>'+src+'</code></div>';
+    var img=new Image();
+    img.onload=function(){img.alt=label;f.innerHTML='';f.appendChild(img)};
+    img.src=src;
+  });
+
+  /* reveal on scroll */
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.05});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
