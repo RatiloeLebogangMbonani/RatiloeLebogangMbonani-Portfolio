@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 /* ===== DESIGN TOKENS ===== */
 :root{
@@ -32,6 +34,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .wrap{width:min(1440px,96%);margin:auto}
 section{padding:clamp(3rem,6vw,5rem) 0 3rem;border-top:1px solid var(--cool-grey)}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--white);padding:.5rem;z-index:99}
+
 /* header */
 header{position:sticky;top:0;z-index:50;background:var(--off-white);border-bottom:1px solid var(--cool-grey);height:var(--head)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
@@ -47,6 +50,7 @@ nav a.active{background:var(--teal);color:var(--white);font-weight:600}
   nav{position:absolute;top:var(--head);left:0;right:0;background:var(--off-white);border-bottom:1px solid var(--cool-grey);display:none;padding:.5rem 4%}
   nav.open{display:block}nav ul{flex-direction:column}
 }
+
 /* hero */
 #home{border-top:0;padding:1.25rem 0 3rem}
 .hero{display:grid;gap:clamp(2rem,7vw,6rem);grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:start;width:min(1280px,92%)}
@@ -61,6 +65,7 @@ nav a.active{background:var(--teal);color:var(--white);font-weight:600}
 .facts{list-style:none;padding:1rem 0 0;margin:1.8rem 0 0;display:grid;gap:.45rem;border-top:1px solid var(--cool-grey);font-size:.94rem}
 @media(max-width:1000px) and (min-width:761px){.hero{gap:2rem;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr)}}
 @media(max-width:760px){.hero{grid-template-columns:1fr;gap:1.5rem}.hero-copy h1{font-size:clamp(1.7rem,8vw,3.6rem)}.hero>img{justify-self:center;width:min(78%,360px);height:clamp(300px,85vw,420px)}}
+
 /* blocks */
 .grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:var(--white);border:1px solid var(--cool-grey);border-radius:12px;padding:1.2rem}
@@ -102,12 +107,37 @@ footer a{color:var(--deep-navy)}
 .project-card h4{margin-bottom:.5rem}
 .project-card p:last-of-type{margin-bottom:.5rem}
 .evidence-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem 1rem}
-.evidence-heading h2{margin:0}
 @media(max-width:640px){.project-grid{grid-template-columns:1fr}}
+
+/* ADDED: PDF DOCUMENT VIEWERS */
+.pdf-viewer {
+    width: 100%;
+    height: 600px;
+    margin: 20px 0;
+    border: 1px solid var(--cool-grey);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.pdf-viewer iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media(max-width:760px) {
+    .pdf-viewer {
+        height: 500px;
+    }
+}
 </style>
 </head>
+
 <body>
 <a class="skip" href="#main">Skip to content</a>
+
 <header>
   <div class="wrap">
     <a class="brand" href="#home">Ratiloe Mbonani</a>
@@ -227,7 +257,7 @@ footer a{color:var(--deep-navy)}
         <h4>Wombs of Wisdom</h4>
         <p>Wombs of Wisdom is an AI-powered knowledge platform concept developed during the GirlCode hackathon. It aims to make African women’s intergenerational knowledge more accessible, covering topics such as motherhood, personal care, health awareness, food and nutrition.</p>
         <p><strong>Tags:</strong> AI, Hackathon, UX Research<br><strong>Technologies:</strong> React, AI Concept, Figma, MySQL</p>
-        <a href="https://wombs-ofwisdom.netlify.app" target="_blank" rel="noopener">Visit Wombs of Wisdom</a>
+        <a href="https://wombs-of-wisdom.netlify.app" target="_blank" rel="noopener">Visit Wombs of Wisdom</a>
       </article>
     </div>
   </div>
@@ -270,27 +300,97 @@ footer a{color:var(--deep-navy)}
       <li>Siyamthanda Mafuta</li>
       <li>Nelisiwe Makhabane</li>
     </ul>
-    
+
     <h3 class="sub">1. Agile Team Charter</h3>
-    <div class="evidence-heading"><h2>Evidence:</h2> <a href="VarsityPath_Agile_Team_Charter.pdf" target="_blank" rel="noopener noreferrer">Agile Team Charter (PDF)</a></div>
-    <article class="card sub"><h4>1. Agile Team Charter Reflection</h4><p>Creating the Agile Team Charter helped me understand the importance of establishing clear roles, responsibilities, goals, and communication methods before starting a group project. Since VarsityPath involved developing an AI-supported university-readiness platform, it was important for every team member to understand the purpose of the project and how their contribution would support the final product. We identified WhatsApp as a way to share quick updates and Microsoft Teams for formal meetings and collaboration. This helped us establish a communication structure and understand the importance of teamwork. I learned that a successful Agile team needs cooperation, accountability, and a shared understanding of the project goals. One challenge in group work is ensuring that everyone remains informed and completes their responsibilities on time. Overall, the Team Charter provided a foundation for our collaboration and helped us understand that the success of the project depends not only on technical skills but also on communication and commitment.</p></article>
-    
+    <div class="evidence-heading">
+      <h2>Evidence:</h2>
+      <a href="VarsityPath_Agile_Team_Charter.pdf" target="_blank" rel="noopener noreferrer">Agile Team Charter (PDF)</a>
+    </div>
+
+  
+    <div class="pdf-viewer">
+      <iframe
+        src="VarsityPath_Agile_Team_Charter.pdf"
+        title="Agile Team Charter PDF">
+      </iframe>
+    </div>
+
+    <article class="card sub">
+      <h4>1. Agile Team Charter Reflection</h4>
+      <p>Creating the Agile Team Charter helped me understand the importance of establishing clear roles, responsibilities, goals, and communication methods before starting a group project. Since VarsityPath involved developing an AI-supported university-readiness platform, it was important for every team member to understand the purpose of the project and how their contribution would support the final product. We identified WhatsApp as a way to share quick updates and Microsoft Teams for formal meetings and collaboration. This helped us establish a communication structure and understand the importance of teamwork. I learned that a successful Agile team needs cooperation, accountability, and a shared understanding of the project goals. One challenge in group work is ensuring that everyone remains informed and completes their responsibilities on time. Overall, the Team Charter provided a foundation for our collaboration and helped us understand that the success of the project depends not only on technical skills but also on communication and commitment.</p>
+    </article>
+
     <h3 class="sub">2. User stories and tasks</h3>
-    <div class="evidence-heading"><h2>Evidence:</h2> <a href="VarsityPath_User_Stories_and_Tasks.pdf" target="_blank" rel="noopener noreferrer">User Stories and Tasks (PDF)</a></div>
-    <article class="card sub"><h4>2. User Stories and Tasks Reflection</h4><p>Developing user stories helped me understand how to approach software development from the user's perspective rather than focusing only on the technical features. For VarsityPath, we considered the needs of Grade 11 and Grade 12 learners who require support with academic performance, study planning, university exploration, eligibility checks, and application tracking. Breaking these needs into user stories made the platform's purpose clearer and helped us identify the tasks required to deliver each feature. I learned that user stories should explain who the user is, what they want to achieve, and why the feature is valuable. Turning the stories into smaller tasks also made the work easier to organise and assign to team members. A challenge was ensuring that the stories were specific enough to guide development while still focusing on the learner's needs. This process showed me that understanding the target users is essential when designing useful and accessible digital solutions.</p></article>
+    <div class="evidence-heading">
+      <h2>Evidence:</h2>
+      <a href="VarsityPath_User_Stories_and_Tasks.pdf" target="_blank" rel="noopener noreferrer">User Stories and Tasks (PDF)</a>
+    </div>
+
+    
+    <div class="pdf-viewer">
+      <iframe
+        src="VarsityPath_User_Stories_and_Tasks.pdf"
+        title="User Stories and Tasks PDF">
+      </iframe>
+    </div>
+
+    <article class="card sub">
+      <h4>2. User Stories and Tasks Reflection</h4>
+      <p>Developing user stories helped me understand how to approach software development from the user's perspective rather than focusing only on the technical features. For VarsityPath, we considered the needs of Grade 11 and Grade 12 learners who require support with academic performance, study planning, university exploration, eligibility checks, and application tracking. Breaking these needs into user stories made the platform's purpose clearer and helped us identify the tasks required to deliver each feature. I learned that user stories should explain who the user is, what they want to achieve, and why the feature is valuable. Turning the stories into smaller tasks also made the work easier to organise and assign to team members. A challenge was ensuring that the stories were specific enough to guide development while still focusing on the learner's needs. This process showed me that understanding the target users is essential when designing useful and accessible digital solutions.</p>
+    </article>
 
     <h3 class="sub">3. Product backlog</h3>
-    <h2>Evidence: </h2> <figure class="ph" data-src="product_backlog.png" data-label="Product backlog screenshot"></figure>
-   <article class="card sub"><h4>3. Product Backlog Reflection</h4><p>Creating the Product Backlog taught me how to organise project requirements into a prioritised list of features and improvements. For VarsityPath, the backlog included features such as academic results management, study planning, university exploration, application tracking, and AI-supported assistance. I learned that not every feature can be developed at the same time, especially when working within a fixed deadline. Prioritising tasks according to user value, importance, and project requirements helps the team focus on the features that contribute most to the product's purpose. The backlog also gave the team a shared reference point for understanding what needed to be completed. One challenge was balancing the number of features we wanted to include with the time available for development and testing. This experience helped me understand that a Product Backlog is not simply a list of ideas; it is a tool for planning, decision-making, and managing changing requirements throughout an Agile project.</p></article>
-
-    <h3 class="sub">4. Sprint backlog</h3>
-    <h2>Evidence: </h2> <figure class="ph" data-src="sprints.png" data-label="Sprint backlog screenshots"></figure>
-    <article class="card sub"><h4>4. Sprint Backlog Reflection</h4><p>Working with Sprint Backlogs helped me understand how a large project can be divided into smaller, manageable stages. For VarsityPath, our planned sprints covered the project foundation, academic management, university exploration and applications, and finally testing and presentation. This structure helped us organise the work according to the time available between 4 August and 4 September 2026. I learned that each sprint should have a clear goal and a realistic set of tasks that the team can work towards completing. Dividing the project into stages also made it easier to monitor progress and identify work that still required attention. A challenge was making sure that the tasks selected for each sprint were achievable within the allocated period, particularly when development, collaboration, and testing all needed time. Overall, Sprint Backlogs helped me appreciate the value of short-term planning, flexibility, and regular progress checks when developing a software product under a deadline.</p></article>
+    <h2>Evidence: </h2>
+    <figure class="ph" data-src="product_backlog.png" data-label="Product backlog screenshot"></figure>
+    <figure class="ph" data-src="product_backlog1.png" data-label="Product backlog screenshot"></figure>
 
     
+    <div class="pdf-viewer">
+      <iframe
+        src="product_backlog.pdf"
+        title="Product Backlog PDF">
+      </iframe>
+    </div>
+
+    <article class="card sub">
+      <h4>3. Product Backlog Reflection</h4>
+      <p>Creating the Product Backlog taught me how to organise project requirements into a prioritised list of features and improvements. For VarsityPath, the backlog included features such as academic results management, study planning, university exploration, application tracking, and AI-supported assistance. I learned that not every feature can be developed at the same time, especially when working within a fixed deadline. Prioritising tasks according to user value, importance, and project requirements helps the team focus on the features that contribute most to the product's purpose. The backlog also gave the team a shared reference point for understanding what needed to be completed. One challenge was balancing the number of features we wanted to include with the time available for development and testing. This experience helped me understand that a Product Backlog is not simply a list of ideas; it is a tool for planning, decision-making, and managing changing requirements throughout an Agile project.</p>
+    </article>
+
+    <h3 class="sub">4. Sprint backlog</h3>
+    <h2>Evidence: </h2>
+    <figure class="ph" data-src="sprints.png" data-label="Sprint backlog screenshots"></figure>
+
+    <div class="pdf-viewer">
+      <iframe
+        src="sprint_backlog.pdf"
+        title="Sprint Backlog PDF">
+      </iframe>
+    </div>
+
+    <article class="card sub">
+      <h4>4. Sprint Backlog Reflection</h4>
+      <p>Working with Sprint Backlogs helped me understand how a large project can be divided into smaller, manageable stages. For VarsityPath, our planned sprints covered the project foundation, academic management, university exploration and applications, and finally testing and presentation. This structure helped us organise the work according to the time available between 4 August and 4 September 2026. I learned that each sprint should have a clear goal and a realistic set of tasks that the team can work towards completing. Dividing the project into stages also made it easier to monitor progress and identify work that still required attention. A challenge was making sure that the tasks selected for each sprint were achievable within the allocated period, particularly when development, collaboration, and testing all needed time. Overall, Sprint Backlogs helped me appreciate the value of short-term planning, flexibility, and regular progress checks when developing a software product under a deadline.</p>
+    </article>
+
     <h3 class="sub">5. Agile logbook</h3>
-    <div class="evidence-heading"><h2>Evidence:</h2> <a href="VarsityPath_Agile_Logbook.pdf" target="_blank" rel="noopener noreferrer">Agile Logbook (PDF)</a></div>
-    <article class="card sub"><h4>5. Agile Logbook Reflection</h4><p>The Agile Logbook helped me recognise the importance of recording project activities, progress, challenges, and decisions throughout the development process. It provides a record of what the team worked on, what was achieved, and which tasks still required attention. I learned that keeping an accurate logbook makes it easier to reflect on the team's progress and identify areas that need improvement. It also supports accountability because team members can review their responsibilities and understand how their contributions fit into the overall project. One lesson I took from this process is that project documentation should be maintained consistently rather than left until the end. If updates are missed, it becomes more difficult to remember decisions and accurately describe what happened during the project. Overall, the Agile Logbook reinforced the importance of reflection, organisation, and transparency in teamwork. It also showed me that documenting the development journey is valuable because it records not only the final outcome but also the learning that takes place along the way.</p></article>
+    <div class="evidence-heading">
+      <h2>Evidence:</h2>
+      <a href="VarsityPath_Agile_Logbook.pdf" target="_blank" rel="noopener noreferrer">Agile Logbook (PDF)</a>
+    </div>
+
+    
+    <div class="pdf-viewer">
+      <iframe
+        src="VarsityPath_Agile_Logbook.pdf"
+        title="Agile Logbook PDF">
+      </iframe>
+    </div>
+
+    <article class="card sub">
+      <h4>5. Agile Logbook Reflection</h4>
+      <p>The Agile Logbook helped me recognise the importance of recording project activities, progress, challenges, and decisions throughout the development process. It provides a record of what the team worked on, what was achieved, and which tasks still required attention. I learned that keeping an accurate logbook makes it easier to reflect on the team's progress and identify areas that need improvement. It also supports accountability because team members can review their responsibilities and understand how their contributions fit into the overall project. One lesson I took from this process is that project documentation should be maintained consistently rather than left until the end. If updates are missed, it becomes more difficult to remember decisions and accurately describe what happened during the project. Overall, the Agile Logbook reinforced the importance of reflection, organisation, and transparency in teamwork. It also showed me that documenting the development journey is valuable because it records not only the final outcome but also the learning that takes place along the way.</p>
+    </article>
 
   </div>
 </section>
@@ -347,5 +447,6 @@ footer a{color:var(--deep-navy)}
   }else{els.forEach(function(e){e.classList.add('in')})}
 })();
 </script>
+
 </body>
 </html>
